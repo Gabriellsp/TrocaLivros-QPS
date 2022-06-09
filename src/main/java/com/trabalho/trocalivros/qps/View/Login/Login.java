@@ -1,14 +1,19 @@
 package com.trabalho.trocalivros.qps.View.Login;
 
+import com.trabalho.trocalivros.qps.Controller.Interface.IUsuarioController;
 import com.trabalho.trocalivros.qps.View.Usuario.MenuUsuario;
 import com.trabalho.trocalivros.qps.View.Usuario.CadastrarUsuario;
 import com.trabalho.trocalivros.qps.Controller.LoginController;
 import com.trabalho.trocalivros.qps.Controller.UsuarioController;
 import com.trabalho.trocalivros.qps.Model.Usuario;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JPanel {
-    public Login() {
+    private final IUsuarioController usuarioController;
+
+    public Login(IUsuarioController usuarioController) {
+        this.usuarioController = usuarioController;
         initComponents();
     }
 
@@ -124,20 +129,23 @@ public class Login extends javax.swing.JPanel {
 
     private void entrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarButtonActionPerformed
         LoginController loginController = new LoginController();
-        if(loginController.login(loginTextField.getText(), senhaTextField.getText())){
-            UsuarioController usuarioController = new UsuarioController();
-            Usuario user = usuarioController.GetUsuario("", "");
-            
-            MenuUsuario menuUsuario = new MenuUsuario(user);
+        Usuario usuarioLogado = loginController.login(loginTextField.getText(), senhaTextField.getText());
+        if(usuarioLogado != null){            
+            MenuUsuario menuUsuario = new MenuUsuario(usuarioLogado);
             menuUsuario.setLocationRelativeTo(null);
             menuUsuario.setVisible(true);
             menuUsuario.setResizable(false);
             menuUsuario.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         }
+        else {
+            JOptionPane.showMessageDialog(null,
+    "Usuário não cadastrado!");
+        }
+        
     }//GEN-LAST:event_entrarButtonActionPerformed
 
     private void cadastrarUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarUsuarioButtonActionPerformed
-        CadastrarUsuario cadastrar = new CadastrarUsuario();
+        CadastrarUsuario cadastrar = new CadastrarUsuario(usuarioController);
         cadastrar.setLocationRelativeTo(null);
         cadastrar.setVisible(true);
         cadastrar.setResizable(false);

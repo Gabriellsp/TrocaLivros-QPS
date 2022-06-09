@@ -4,7 +4,13 @@ public class Telefone {
    private String numero;
    private int ddd;
    private String prefixo;
-
+   
+   public Telefone(String numero, int ddd, String prefixo) {
+       this.numero = numero;
+       this.ddd = ddd;
+       this.prefixo = prefixo;
+   }
+   
     public String getNumero() {
         return numero;
     }

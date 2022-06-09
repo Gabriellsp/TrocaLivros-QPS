@@ -1,8 +1,15 @@
 package com.trabalho.trocalivros.qps.View.Usuario;
 
-public class CadastrarUsuario extends javax.swing.JFrame {
+import com.trabalho.trocalivros.qps.Controller.Interface.IUsuarioController;
+import com.trabalho.trocalivros.qps.DataBase.UsuariosData;
+import com.trabalho.trocalivros.qps.Model.Endereco;
+import com.trabalho.trocalivros.qps.Model.Telefone;
+import com.trabalho.trocalivros.qps.Model.Usuario;
 
-    public CadastrarUsuario() {
+public class CadastrarUsuario extends javax.swing.JFrame {
+    private final IUsuarioController usuarioController;
+    public CadastrarUsuario(IUsuarioController usuarioController) {
+        this.usuarioController = usuarioController;
         initComponents();
     }
 
@@ -330,7 +337,14 @@ public class CadastrarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_telefoneTextFieldActionPerformed
 
     private void cadastrarUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarUsuarioButtonActionPerformed
-        // TODO add your handling code here:
+        Endereco endereco = new Endereco(ruaTextField.getText(), Integer.parseInt(numeroTextField.getText()), 
+                bairroTextField.getText(), cidadeTextField.getText(),  cepTextField.getText(),  paisTextField.getText());
+        Telefone telefone = new Telefone(telefoneTextField.getText(), Integer.parseInt(dddTextField.getText()), prefixoTextField.getText());
+        Usuario usuario = new Usuario(UsuariosData.usuariosCadastrados.size(), loginTextField.getText(), 
+                senhaTextField.getText(), nomeTextField.getText(), 
+            endereco, dataNascimentoTextField.getText(), emailTextField.getText(), telefone);
+        usuarioController.CadastrarUsuario(usuario);
+        setVisible(false);
     }//GEN-LAST:event_cadastrarUsuarioButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

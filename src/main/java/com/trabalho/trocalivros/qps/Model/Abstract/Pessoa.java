@@ -2,7 +2,6 @@ package com.trabalho.trocalivros.qps.Model.Abstract;
 
 import com.trabalho.trocalivros.qps.Model.Endereco;
 import com.trabalho.trocalivros.qps.Model.Telefone;
-import java.util.Date;
 
 public abstract class Pessoa {
     private String nome;
@@ -10,7 +9,16 @@ public abstract class Pessoa {
     private String dataNascimento;
     private String email;
     private Telefone telefone;
-
+    
+    public Pessoa(String nome, 
+            Endereco endereco, String dataNascimento, String email, Telefone telefone){
+        this.nome = nome;
+        this.endereco = endereco;
+        this.dataNascimento = dataNascimento;
+        this.email = email;
+        this.telefone = telefone;
+    }
+    
     public String getNome() {
         return nome;
     }

@@ -6,7 +6,7 @@ import com.trabalho.trocalivros.qps.View.Livro.MenuLivro;
 import javax.swing.JFrame;
 
 public class MenuUsuario extends javax.swing.JFrame {
-    Usuario user;
+    private final Usuario user;
     public MenuUsuario(Usuario user) {
         this.user = user;
         initComponents();

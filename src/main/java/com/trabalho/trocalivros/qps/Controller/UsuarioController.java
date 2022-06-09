@@ -1,6 +1,7 @@
 package com.trabalho.trocalivros.qps.Controller;
 
 import com.trabalho.trocalivros.qps.Controller.Interface.IUsuarioController;
+import com.trabalho.trocalivros.qps.DataBase.UsuariosData;
 import com.trabalho.trocalivros.qps.Model.Endereco;
 import com.trabalho.trocalivros.qps.Model.Telefone;
 import com.trabalho.trocalivros.qps.Model.Usuario;
@@ -9,7 +10,8 @@ public class UsuarioController implements IUsuarioController{
 
     @Override
     public void CadastrarUsuario(Usuario usuario) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        UsuariosData.AddUsuario(usuario);
+//        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
@@ -24,27 +26,12 @@ public class UsuarioController implements IUsuarioController{
 
     @Override
     public Usuario GetUsuario(String login, String senha) {
-        Usuario user = new Usuario();
-        user.setDataNascimento("10/12/1998");
-        user.setEmail("gabriel.lsp1998@gmail.com");
-        Endereco endereco = new Endereco();
-        endereco.setBairro("Centro");
-        endereco.setCep("35690-000");
-        endereco.setCidade("Florestal");
-        endereco.setNumero(41);
-        endereco.setPais("Brasil");
-        endereco.setRua("Rua Nelson de Senna");
-        user.setEndereco(endereco);
-        user.setId(0);
-        user.setLogin("gabriel");
-        user.setNome("Gabriel Luis");
-        user.setSenha("123");
-        Telefone telefone = new Telefone();
-        telefone.setDdd(031);
-        telefone.setNumero("97152-3336");
-        telefone.setPrefixo("+55");
-        user.setTelefone(telefone);
-        return user;
+        
+//        Endereco endereco = new Endereco("Rua Nelson", 41, "Bairro", "BH", "123123", "Brasil");
+//        Telefone telefone = new Telefone("123123-123123",031, "+55");
+//        Usuario user = new Usuario(0, "gabriel", "123", "Gabriel Luis", 
+//            endereco, "10/12/1998", "gabriel@gmail.com", telefone);
+        return UsuariosData.GetUsuario(login, senha);
     }
     
 }
