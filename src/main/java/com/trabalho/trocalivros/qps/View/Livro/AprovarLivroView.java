@@ -1,38 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.trabalho.trocalivros.qps.View.Livro;
 
 import com.trabalho.trocalivros.qps.Controller.Interface.ILivroController;
 import com.trabalho.trocalivros.qps.Controller.LivroController;
-import com.trabalho.trocalivros.qps.DataBase.ItensData;
-import com.trabalho.trocalivros.qps.Model.Abstract.ItemTroca;
+import com.trabalho.trocalivros.qps.Model.Abstract.Item;
 import com.trabalho.trocalivros.qps.Model.Livro;
-import com.trabalho.trocalivros.qps.Model.Usuario;
-import java.util.ArrayList;
+import com.trabalho.trocalivros.qps.Util.StatusItemEnum;
 import java.util.List;
+import javax.swing.JOptionPane;
 
-public class ExcluirLivro extends javax.swing.JFrame {
-    private final List<ItemTroca> itensDoUsuario;
-    private final Usuario usuario;
+public class AprovarLivroView extends javax.swing.JFrame {
     private final ILivroController livroController;
+    private List<Item> livrosParaAprovar;
     
-    public ExcluirLivro(Usuario usuario) {
-        this.usuario = usuario;
+    public AprovarLivroView() {
         this.livroController = new LivroController();
-        itensDoUsuario = new ArrayList<ItemTroca>();
         initComponents();
-        initListaItensDoUsuario();      
+        initListaItensParaAprovar();
     }
     
-    private void initListaItensDoUsuario() {
-        livrosUsuarioComboBox.removeAllItems();
-        for(int i = 0; i< ItensData.itensCadastrados.size(); i++){
-            if(ItensData.itensCadastrados.get(i).getIdUsuario() == usuario.getId()){
-                itensDoUsuario.add(ItensData.itensCadastrados.get(i));
-                livrosUsuarioComboBox.addItem(ItensData.itensCadastrados.get(i).getNome());
-            }
+    private void initListaItensParaAprovar() {
+        livrosParaAprovarComboBox.removeAllItems();
+        livrosParaAprovar = livroController.GetItensParaAprovar();
+        for(Item item : livrosParaAprovar) {
+            livrosParaAprovarComboBox.addItem(item.getNome());
         }
     }
 
@@ -40,8 +30,8 @@ public class ExcluirLivro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        livrosUsuarioComboBox = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
+        livrosParaAprovarComboBox = new javax.swing.JComboBox<>();
         nomeTextField = new javax.swing.JTextField();
         nomeLabel = new javax.swing.JLabel();
         descricaoLabel = new javax.swing.JLabel();
@@ -54,18 +44,20 @@ public class ExcluirLivro extends javax.swing.JFrame {
         tipoLabel = new javax.swing.JLabel();
         editoraLabel = new javax.swing.JLabel();
         editoraTextField = new javax.swing.JTextField();
-        excluirLivroButton = new javax.swing.JButton();
+        aprovarButton = new javax.swing.JButton();
+        aprovarLivroLabel = new javax.swing.JLabel();
+        recusarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        livrosUsuarioComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        livrosUsuarioComboBox.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setText("Selecione o livro:");
+
+        livrosParaAprovarComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        livrosParaAprovarComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                livrosUsuarioComboBoxActionPerformed(evt);
+                livrosParaAprovarComboBoxActionPerformed(evt);
             }
         });
-
-        jLabel1.setText("Selecione o livro:");
 
         nomeTextField.setEnabled(false);
         nomeTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -122,10 +114,19 @@ public class ExcluirLivro extends javax.swing.JFrame {
             }
         });
 
-        excluirLivroButton.setText("Excluir livro");
-        excluirLivroButton.addActionListener(new java.awt.event.ActionListener() {
+        aprovarButton.setText("Aprovar");
+        aprovarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                excluirLivroButtonActionPerformed(evt);
+                aprovarButtonActionPerformed(evt);
+            }
+        });
+
+        aprovarLivroLabel.setText("Aprovar Livro");
+
+        recusarButton.setText("Recusar");
+        recusarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recusarButtonActionPerformed(evt);
             }
         });
 
@@ -134,44 +135,50 @@ public class ExcluirLivro extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(editoraLabel)
-                            .addGap(12, 12, 12)
-                            .addComponent(editoraTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(livrosUsuarioComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nomeLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(descricaoLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(anoLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(autorLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(tipoLabel, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(descricaoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(anoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(autorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tipoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(80, 80, 80)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addComponent(excluirLivroButton)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                        .addComponent(editoraLabel)
+                        .addGap(12, 12, 12)
+                        .addComponent(editoraTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(nomeLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(descricaoLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(anoLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(autorLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(tipoLabel, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(descricaoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(anoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(autorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tipoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(aprovarLivroLabel)
+                                .addComponent(livrosParaAprovarComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(82, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(recusarButton)
+                .addGap(62, 62, 62)
+                .addComponent(aprovarButton)
+                .addGap(109, 109, 109))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(17, 17, 17)
+                .addComponent(aprovarLivroLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
-                    .addComponent(livrosUsuarioComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(livrosParaAprovarComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -196,14 +203,36 @@ public class ExcluirLivro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(editoraTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(editoraLabel))
-                .addGap(18, 18, 18)
-                .addComponent(excluirLivroButton)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(aprovarButton)
+                    .addComponent(recusarButton))
+                .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void livrosParaAprovarComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_livrosParaAprovarComboBoxActionPerformed
+        if(livrosParaAprovarComboBox.getSelectedIndex() != -1){
+            atualizarLivroParaAprovar();
+        }
+    }//GEN-LAST:event_livrosParaAprovarComboBoxActionPerformed
+    
+    private void atualizarLivroParaAprovar() {
+        Livro livroSelecionado = (Livro) livrosParaAprovar.get(livrosParaAprovarComboBox.getSelectedIndex());
+        setTodosTextField(livroSelecionado);
+    }
+    
+    private void setTodosTextField(Livro livroSelecionado) {
+        nomeTextField.setText(livroSelecionado.getNome());
+        descricaoTextField.setText(livroSelecionado.getDescricao());
+        anoTextField.setText(String.valueOf(livroSelecionado.getAno()));
+        autorTextField.setText(String.valueOf(livroSelecionado.getAutor()));
+        tipoComboBox.setSelectedItem(livroSelecionado.getTipo());
+        editoraTextField.setText(livroSelecionado.getEditora());
+    }
+    
     private void nomeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nomeTextFieldActionPerformed
@@ -228,44 +257,43 @@ public class ExcluirLivro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_editoraTextFieldActionPerformed
 
-    private void excluirLivroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirLivroButtonActionPerformed
-        Livro livroSelecionado = (Livro) itensDoUsuario.get(livrosUsuarioComboBox.getSelectedIndex());
-         
-       livroController.ExcluirLivro(livroSelecionado);
+    private void aprovarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aprovarButtonActionPerformed
+        int indexLivro = livrosParaAprovarComboBox.getSelectedIndex();
+        Livro livroSelecionado = (Livro) livrosParaAprovar.get(indexLivro);
+        livroController.UpdateStatusItem(livroSelecionado.getId(), StatusItemEnum.APROVADO);
+        livrosParaAprovar.remove(livroSelecionado);
+        JOptionPane.showMessageDialog(null,
+            "Livro aprovado!");
         setVisible(false);
-    }//GEN-LAST:event_excluirLivroButtonActionPerformed
+    }//GEN-LAST:event_aprovarButtonActionPerformed
 
-    private void livrosUsuarioComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_livrosUsuarioComboBoxActionPerformed
-        if(livrosUsuarioComboBox.getSelectedIndex() != -1){
-            atualizarLivroParaExclusão();
-        }
-    }//GEN-LAST:event_livrosUsuarioComboBoxActionPerformed
-    
-    private void atualizarLivroParaExclusão() {
-        Livro livroSelecionado = (Livro) itensDoUsuario.get(livrosUsuarioComboBox.getSelectedIndex());
-        nomeTextField.setText(livroSelecionado.getNome());
-        descricaoTextField.setText(livroSelecionado.getDescricao());
-        anoTextField.setText(String.valueOf(livroSelecionado.getAno()));
-        autorTextField.setText(String.valueOf(livroSelecionado.getAutor()));
-        tipoComboBox.setSelectedItem(livroSelecionado.getTipo());
-        editoraTextField.setText(livroSelecionado.getEditora());
-    }
+    private void recusarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recusarButtonActionPerformed
+        int indexLivro = livrosParaAprovarComboBox.getSelectedIndex();
+        Livro livroSelecionado = (Livro) livrosParaAprovar.get(indexLivro);
+        livroController.UpdateStatusItem(livroSelecionado.getId(), StatusItemEnum.RECUSADO);
+        livrosParaAprovar.remove(livroSelecionado);
+        JOptionPane.showMessageDialog(null,
+            "Livro reprovado!");
+        setVisible(false);
+    }//GEN-LAST:event_recusarButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel anoLabel;
     private javax.swing.JTextField anoTextField;
+    private javax.swing.JButton aprovarButton;
+    private javax.swing.JLabel aprovarLivroLabel;
     private javax.swing.JLabel autorLabel;
     private javax.swing.JTextField autorTextField;
     private javax.swing.JLabel descricaoLabel;
     private javax.swing.JTextField descricaoTextField;
     private javax.swing.JLabel editoraLabel;
     private javax.swing.JTextField editoraTextField;
-    private javax.swing.JButton excluirLivroButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JComboBox<String> livrosUsuarioComboBox;
+    private javax.swing.JComboBox<String> livrosParaAprovarComboBox;
     private javax.swing.JLabel nomeLabel;
     private javax.swing.JTextField nomeTextField;
+    private javax.swing.JButton recusarButton;
     private javax.swing.JComboBox<String> tipoComboBox;
     private javax.swing.JLabel tipoLabel;
     // End of variables declaration//GEN-END:variables
-
 }

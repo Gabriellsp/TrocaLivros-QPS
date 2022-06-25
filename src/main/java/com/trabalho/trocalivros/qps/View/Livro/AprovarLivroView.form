@@ -24,55 +24,61 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="editoraLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                          <Component id="editoraTextField" min="-2" pref="211" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="livrosUsuarioComboBox" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="nomeLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="descricaoLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="anoLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="autorLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tipoLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="nomeTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
-                                  <Component id="descricaoTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
-                                  <Component id="anoTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
-                                  <Component id="autorTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
-                                  <Component id="tipoComboBox" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
+              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="editoraLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Component id="editoraTextField" min="-2" pref="211" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
-                      <Component id="excluirLivroButton" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="nomeLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="descricaoLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="anoLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="autorLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="tipoLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="nomeTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
+                              <Component id="descricaoTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
+                              <Component id="anoTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
+                              <Component id="autorTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
+                              <Component id="tipoComboBox" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="aprovarLivroLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="livrosParaAprovarComboBox" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="60" max="32767" attributes="0"/>
+              <EmptySpace pref="82" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="recusarButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+              <Component id="aprovarButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+              <Component id="aprovarLivroLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="32" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <Component id="livrosUsuarioComboBox" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="livrosParaAprovarComboBox" alignment="1" min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
@@ -104,15 +110,23 @@
                   <Component id="editoraTextField" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="editoraLabel" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="excluirLivroButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="24" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="aprovarButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="recusarButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JComboBox" name="livrosUsuarioComboBox">
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Selecione o livro:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="livrosParaAprovarComboBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -124,16 +138,11 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="livrosUsuarioComboBoxActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="livrosParaAprovarComboBoxActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Selecione o livro:"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="nomeTextField">
       <Properties>
@@ -227,12 +236,25 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editoraTextFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="excluirLivroButton">
+    <Component class="javax.swing.JButton" name="aprovarButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Excluir livro"/>
+        <Property name="text" type="java.lang.String" value="Aprovar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="excluirLivroButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="aprovarButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="aprovarLivroLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Aprovar Livro"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="recusarButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Recusar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="recusarButtonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

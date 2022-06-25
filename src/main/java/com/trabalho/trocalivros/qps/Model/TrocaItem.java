@@ -1,13 +1,31 @@
 package com.trabalho.trocalivros.qps.Model;
 
-import com.trabalho.trocalivros.qps.Model.Abstract.ItemTroca;
+import com.trabalho.trocalivros.qps.Model.Abstract.Item;
+import com.trabalho.trocalivros.qps.Util.StatusItemEnum;
 import java.util.Date;
 
 public class TrocaItem {
-    private ItemTroca item1;
-    private ItemTroca item2;
+    private int id;
+    private Item itemInteresse;
+    private Item itemOfertado;
     private Date dataTroca;
-    private String status;
+    private StatusItemEnum status;
+    
+    public TrocaItem(int id, Item itemInteresse, Item itemOfertado){
+        this.id = id;
+        this.itemInteresse = itemInteresse;
+        this.itemOfertado = itemOfertado;
+        this.dataTroca = new Date();
+        this.status = StatusItemEnum.PENDENTE;
+    }
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Date getDataTroca() {
         return dataTroca;
@@ -17,27 +35,27 @@ public class TrocaItem {
         this.dataTroca = dataTroca;
     }
 
-    public String getStatus() {
+    public StatusItemEnum getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusItemEnum status) {
         this.status = status;
     }
 
-    public ItemTroca getItem1() {
-        return item1;
+    public Item getItemInteresse() {
+        return itemInteresse;
     }
 
-    public void setItem1(ItemTroca item1) {
-        this.item1 = item1;
+    public void setItemInteresse(Item itemInteresse) {
+        this.itemInteresse = itemInteresse;
     }
 
-    public ItemTroca getItem2() {
-        return item2;
+    public Item getItemOfertado() {
+        return itemOfertado;
     }
 
-    public void setItem2(ItemTroca item2) {
-        this.item2 = item2;
+    public void setItemOfertado(Item itemOfertado) {
+        this.itemOfertado = itemOfertado;
     }
 }

@@ -3,10 +3,10 @@ package com.trabalho.trocalivros.qps.View.Livro;
 import com.trabalho.trocalivros.qps.Model.Usuario;
 import javax.swing.JFrame;
 
-public class MenuLivro extends javax.swing.JFrame {
+public class MenuLivroView extends javax.swing.JFrame {
 
     Usuario usuario;
-    public MenuLivro(Usuario usuario) {
+    public MenuLivroView(Usuario usuario) {
         this.usuario = usuario;
         initComponents();
     }
@@ -75,29 +75,27 @@ public class MenuLivro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastrarLivroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarLivroButtonActionPerformed
-        CadastrarLivro cadastrarLivro = new CadastrarLivro(usuario);
-        cadastrarLivro.setLocationRelativeTo(null);
-        cadastrarLivro.setVisible(true);
-        cadastrarLivro.setResizable(false);
-        cadastrarLivro.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        CadastrarLivroView cadastrarLivroView = new CadastrarLivroView(usuario);
+        callNewView(cadastrarLivroView);
     }//GEN-LAST:event_cadastrarLivroButtonActionPerformed
 
     private void editarLivroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarLivroButtonActionPerformed
-        EditarLivro editarLivro = new EditarLivro(usuario);
-        editarLivro.setLocationRelativeTo(null);
-        editarLivro.setVisible(true);
-        editarLivro.setResizable(false);
-        editarLivro.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        EditarLivroView editarLivroView = new EditarLivroView(usuario);
+        callNewView(editarLivroView);
     }//GEN-LAST:event_editarLivroButtonActionPerformed
 
     private void excluirLivroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirLivroButtonActionPerformed
-        ExcluirLivro excluirLivro = new ExcluirLivro(usuario);
-        excluirLivro.setLocationRelativeTo(null);
-        excluirLivro.setVisible(true);
-        excluirLivro.setResizable(false);
-        excluirLivro.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        ExcluirLivroView excluirLivroView = new ExcluirLivroView(usuario);
+        callNewView(excluirLivroView);
     }//GEN-LAST:event_excluirLivroButtonActionPerformed
-
+    
+    private void callNewView(JFrame frame){
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+        frame.setResizable(false);
+        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cadastrarLivroButton;
     private javax.swing.JButton editarLivroButton;

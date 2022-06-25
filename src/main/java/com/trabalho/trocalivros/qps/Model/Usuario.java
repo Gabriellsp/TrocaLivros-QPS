@@ -6,10 +6,13 @@ public class Usuario extends Pessoa{
     private int id;
     private String login;
     private String senha;
-    public Usuario(int id, String login, String senha, String nome, 
+    private boolean isAdm;
+    
+    public Usuario(int id,boolean isAdm, String login, String senha, String nome, 
             Endereco endereco, String dataNascimento, String email, Telefone telefone){
         super(nome, endereco, dataNascimento, email, telefone);
         this.id = id;
+        this.isAdm = isAdm;
         this.login= login;
         this.senha = senha;
     }
@@ -35,5 +38,13 @@ public class Usuario extends Pessoa{
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public boolean isIsAdm() {
+        return isAdm;
+    }
+
+    public void setIsAdm(boolean isAdm) {
+        this.isAdm = isAdm;
     }
 }

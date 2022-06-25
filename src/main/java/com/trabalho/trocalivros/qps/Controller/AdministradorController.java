@@ -8,7 +8,7 @@ public class AdministradorController implements IAdministradorController{
 
     @Override
     public void AprovarLivro(AtomicReference<Livro> livro, boolean aprovado) {
-        livro.get().setAprovado(aprovado);
+//        livro.get().setAprovado(aprovado);
     }
     
 }

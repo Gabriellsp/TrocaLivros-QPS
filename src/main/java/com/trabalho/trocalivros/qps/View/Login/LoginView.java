@@ -1,18 +1,18 @@
 package com.trabalho.trocalivros.qps.View.Login;
 
 import com.trabalho.trocalivros.qps.Controller.Interface.IUsuarioController;
-import com.trabalho.trocalivros.qps.View.Usuario.MenuUsuario;
-import com.trabalho.trocalivros.qps.View.Usuario.CadastrarUsuario;
+import com.trabalho.trocalivros.qps.View.Usuario.MenuUsuarioView;
+import com.trabalho.trocalivros.qps.View.Usuario.CadastrarUsuarioView;
 import com.trabalho.trocalivros.qps.Controller.LoginController;
 import com.trabalho.trocalivros.qps.Controller.UsuarioController;
 import com.trabalho.trocalivros.qps.Model.Usuario;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class Login extends javax.swing.JPanel {
+public class LoginView extends javax.swing.JPanel {
     private final IUsuarioController usuarioController;
 
-    public Login(IUsuarioController usuarioController) {
+    public LoginView(IUsuarioController usuarioController) {
         this.usuarioController = usuarioController;
         initComponents();
     }
@@ -131,11 +131,8 @@ public class Login extends javax.swing.JPanel {
         LoginController loginController = new LoginController();
         Usuario usuarioLogado = loginController.login(loginTextField.getText(), senhaTextField.getText());
         if(usuarioLogado != null){            
-            MenuUsuario menuUsuario = new MenuUsuario(usuarioLogado);
-            menuUsuario.setLocationRelativeTo(null);
-            menuUsuario.setVisible(true);
-            menuUsuario.setResizable(false);
-            menuUsuario.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            MenuUsuarioView menuUsuarioView = new MenuUsuarioView(usuarioLogado);
+            callNewView(menuUsuarioView); 
         }
         else {
             JOptionPane.showMessageDialog(null,
@@ -145,13 +142,16 @@ public class Login extends javax.swing.JPanel {
     }//GEN-LAST:event_entrarButtonActionPerformed
 
     private void cadastrarUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarUsuarioButtonActionPerformed
-        CadastrarUsuario cadastrar = new CadastrarUsuario(usuarioController);
-        cadastrar.setLocationRelativeTo(null);
-        cadastrar.setVisible(true);
-        cadastrar.setResizable(false);
-        cadastrar.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        CadastrarUsuarioView cadastrarView = new CadastrarUsuarioView(usuarioController);
+        callNewView(cadastrarView); 
     }//GEN-LAST:event_cadastrarUsuarioButtonActionPerformed
-
+    
+    private void callNewView(JFrame frame){
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+        frame.setResizable(false);
+        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cadastrarUsuarioButton;

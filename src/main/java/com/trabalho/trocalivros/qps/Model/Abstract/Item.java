@@ -1,19 +1,21 @@
 package com.trabalho.trocalivros.qps.Model.Abstract;
 
-public abstract class ItemTroca {
+import com.trabalho.trocalivros.qps.Util.StatusItemEnum;
+
+public abstract class Item {
     private int id;
     private String nome;
     private String descricao;
-    private boolean aprovado;
+    private StatusItemEnum status;
     private int idUsuario;
     private boolean disponivel;
     
-    public ItemTroca(int id, int idUsuario, String nome, String descricao) {
+    public Item(int id, int idUsuario, String nome, String descricao) {
         this.id = id;
-        this.aprovado = false;
+        this.status = StatusItemEnum.PENDENTE;
         this.idUsuario = idUsuario;
         this.nome = nome;
-        this.disponivel = false;
+        this.disponivel = true;
         this.descricao = descricao;
     }
     
@@ -41,14 +43,6 @@ public abstract class ItemTroca {
         this.descricao = descricao;
     }
 
-    public boolean isAprovado() {
-        return aprovado;
-    }
-
-    public void setAprovado(boolean aprovado) {
-        this.aprovado = aprovado;
-    }
-
     public int getIdUsuario() {
         return idUsuario;
     }
@@ -63,5 +57,13 @@ public abstract class ItemTroca {
 
     public void setDisponivel(boolean disponivel) {
         this.disponivel = disponivel;
+    }
+
+    public StatusItemEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusItemEnum status) {
+        this.status = status;
     }
 }

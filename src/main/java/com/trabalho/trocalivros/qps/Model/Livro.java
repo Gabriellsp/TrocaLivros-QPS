@@ -1,8 +1,8 @@
 package com.trabalho.trocalivros.qps.Model;
 
-import com.trabalho.trocalivros.qps.Model.Abstract.ItemTroca;
+import com.trabalho.trocalivros.qps.Model.Abstract.Item;
 
-public class Livro extends ItemTroca{
+public class Livro extends Item{
     private String autor;
     private int ano;
     private String tipo;

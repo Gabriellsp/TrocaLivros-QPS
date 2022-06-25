@@ -19,4 +19,16 @@ public class UsuariosData {
      public static void AddUsuario(Usuario usuario) {
         usuariosCadastrados.add(usuario);
      }
+
+    public static void EditarUsuario(Usuario usuarioEditado) {
+        for (int i =0;i<usuariosCadastrados.size();i++) {
+            if(usuariosCadastrados.get(i).getId() == usuarioEditado.getId()){
+                usuariosCadastrados.set(i, usuarioEditado);
+            }
+        }
+    }
+    
+    public static int GetNovoId() {
+        return usuariosCadastrados.size();
+    }
 }

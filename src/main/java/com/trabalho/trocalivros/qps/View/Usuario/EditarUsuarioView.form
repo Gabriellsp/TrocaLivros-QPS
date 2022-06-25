@@ -23,83 +23,107 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="loginLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="senhaLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="nomeLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="dataNascimentoLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="emailLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="cadastrarUsuarioLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                              <Component id="loginTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
-                              <Component id="senhaTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
-                              <Component id="nomeTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
-                              <Component id="dataNascimentoTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
-                              <Component id="emailTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="ruaLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="numeroLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="bairroLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cidadeLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cepLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="paisLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="ruaTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
+                                  <Component id="numeroTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
+                                  <Component id="bairroTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
+                                  <Component id="cidadeTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
+                                  <Component id="cepTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
+                                  <Component id="paisTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="ruaLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="numeroLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="bairroLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="cidadeLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="cepLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="paisLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="ruaTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
-                          <Component id="numeroTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
-                          <Component id="bairroTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
-                          <Component id="cidadeTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
-                          <Component id="cepTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
-                          <Component id="paisTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="telefoneLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="cadastrarUsuarioButton" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="telefoneLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="prefixoTextField" min="-2" pref="43" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="dddTextField" min="-2" pref="36" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="telefoneTextField" min="-2" pref="119" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="nomeLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="dataNascimentoLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="emailLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="loginLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="senhaLabel" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="cadastrarUsuarioLabel" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="nomeTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
+                                      <Component id="dataNascimentoTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
+                                      <Component id="emailTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
+                                      <Component id="senhaTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
+                                      <Component id="loginTextField" alignment="1" min="-2" pref="211" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="isAdmLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="isAdmRadioButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="editarUsuarioButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="61" max="32767" attributes="0"/>
+              <EmptySpace pref="86" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Component id="cadastrarUsuarioLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="loginTextField" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="loginLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="loginTextField" min="-2" max="-2" attributes="0"/>
+                  <Component id="loginLabel" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="senhaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="senhaTextField" alignment="0" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="senhaTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="senhaLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="isAdmLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="isAdmRadioButton" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="nomeTextField" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="nomeLabel" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -151,9 +175,9 @@
                   <Component id="dddTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="telefoneTextField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-              <Component id="cadastrarUsuarioButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <EmptySpace pref="47" max="32767" attributes="0"/>
+              <Component id="editarUsuarioButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -166,7 +190,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="cadastrarUsuarioLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cadastro de usu&#xe1;rio"/>
+        <Property name="text" type="java.lang.String" value="Editar usu&#xe1;rio"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="loginLabel">
@@ -289,18 +313,25 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="telefoneTextFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="cadastrarUsuarioButton">
+    <Component class="javax.swing.JButton" name="editarUsuarioButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cadastrar usu&#xe1;rio"/>
+        <Property name="text" type="java.lang.String" value="Editar Usu&#xe1;rio"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrarUsuarioButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editarUsuarioButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="telefoneLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Telefone:"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="isAdmLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Marque se for administrador:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="isAdmRadioButton">
     </Component>
   </SubComponents>
 </Form>
